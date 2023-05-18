@@ -21,7 +21,7 @@ Firstly test that the examples work which means everything is setup properly.
 Then move the required folders into the “openpose” directory of the app (instructions under the “Export OpenPose” heading
 
 Install all required dependencies using\
-`pip install requirements.txt`\
+`pip install  -r requirements.txt`\
 If you are planning to develop the app it is recommended that you set up a virtual python environment\
 To start program use:\
 `python MainWindow.py`
