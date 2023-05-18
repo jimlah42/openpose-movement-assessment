@@ -38,13 +38,14 @@ Also all functions have used type hints and docstrings to help with usage so any
 
 ## Basic Program Overview
 
-1. Raw videos are processed in `process_vid.py`
+1. Raw videos are processed in `openpose/process_vid.py` (OpenPose parameters can be configured in `openpose/opParams.json` see https://github.com/CMU-Perceptual-Computing-Lab/openpose/blob/master/include/openpose/flags.hpp for parameters)
 2. This will create a JSON and video ouput with OpenPose keypoint data in the `output/{video_file_name}` directory
 3. Then user can create measurements on the measurement window and these are processed in `measurements/calculate_measurements.py`
 4. This will append the keypoints JSON file to include the calculated measurements
 5. If the user opts to draw the measurements this is processed in `draw/draw_tools.py`
 6. This will create a new output video (`output_with_measurements.avi`) with the measurements draw onto it
 7. Users can then also either plot or create csv output using `data/data_tools.py` with `generate_plot()` and `generate_csv()`
+
 
 ## User Interface
 
