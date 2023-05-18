@@ -46,22 +46,22 @@ Each major page contains widgets and for more complex components is broken into 
 
 Each widget follows the following structure
 
-#Widgets
-widget definition
-widget configuration
-widget connections
-
-widget definition
-widget configuration
-widget connections
-…
-
-#Layout
-layout 
-…
-
-#Connections
-connection functions
+#Widgets\
+widget definition\
+widget configuration\
+widget connections\
+\
+widget definition\
+widget configuration\
+widget connections\
+…\
+\
+#Layout\
+layout \
+…\
+\
+#Connections\
+connection functions\
 
 Custom are organised inside the “widgets” directory. If a widget is only used on one page it goes inside that page's corresponding folder (e.g. widgets/process for the process page). If a custom widget is used across multiple pages it is put inside the widgets/general folder.
 
