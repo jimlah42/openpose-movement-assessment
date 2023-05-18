@@ -1,0 +1,4 @@
+{
+    "model_folder": "./openpose/models",
+    "number_people_max": 1
+}
