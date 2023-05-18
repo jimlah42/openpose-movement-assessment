@@ -33,6 +33,19 @@ I have tried to follow the PEP 8 python style and naming conventions for this pr
 
 https://peps.python.org/pep-0008/
 
+Also all functions have used type hints and docstrings to help with usage so any new development should also include this
+
+
+## Basic Program Overview
+
+1. Raw videos are processed in `process_vid.py`
+2. This will create a JSON and video ouput with OpenPose keypoint data in the `output/{video_file_name}` directory
+3. Then user can create measurements on the measurement window and these are processed in `measurements/calculate_measurements.py`
+4. This will append the keypoints JSON file to include the calculated measurements
+5. If the user opts to draw the measurements this is processed in `draw/draw_tools.py`
+6. This will create a new output video (`output_with_measurements.avi`) with the measurements draw onto it
+7. Users can then also either plot or create csv output using `data/data_tools.py` with `generate_plot()` and `generate_csv()`
+
 ## User Interface
 
 The user interface is built using the PyQt5 framework. I recommend becoming familiar with this framework before working on the app.
@@ -44,7 +57,13 @@ https://www.pythonguis.com/tutorials/creating-your-first-pyqt-window/
 The user interface stems from the MainWindow widow widget which is the parent of all the major pages inside each tab.
 Each major page contains widgets and for more complex components is broken into custom widgets to reduce complexity of each file and allow widgets to be reused
 
-Each widget follows the following structure
+The current pages are:
+1. `ProcessWindow`
+2. `MeasurementsWindow`
+3. `ViewWindow`
+4. `AnalyseWindow`
+
+Each custom widget follows the following structure
 
 #Widgets\
 widget definition\
@@ -63,29 +82,29 @@ layout \
 #Connections\
 connection functions\
 
-Custom are organised inside the “widgets” directory. If a widget is only used on one page it goes inside that page's corresponding folder (e.g. widgets/process for the process page). If a custom widget is used across multiple pages it is put inside the widgets/general folder.
+Custom widgets are organised inside the “widgets” directory. If a widget is only used on one page it goes inside that page's corresponding folder (e.g. `widgets/process` for the process page). If a custom widget is used across multiple pages it is put inside the widgets/general folder.
 
-## OpenPose
 
-OpenPose processing is handled in process_vid.py
 
 ## Measurements
+
+A major part of this platform is to allow for the easy development of new measurements
 
 Measurement types are made to import the Measurement class inside ./measurements/Measurement.py
 
 This class is designed to represent an instance of a measurement type created by the user.
-Abstracting the class like this allows the program to simply loop through Measurements and ask the object to perform the task how it is supposed to, removing the need for excess logic required to check measurement types everytime they are required to perform a task.
+Abstracting the class like this allows the program to simply loop through `Measurements` in and ask the object to perform the task how it is supposed to, removing the need for excess logic required to check measurement types everytime they are required to perform a task.
 
 Each new measurement class has 4 main functions that it needs to perform:
 
-`calculate()` - Calculate measurement value from keypoints\
-This function takes the keypoint data for a given frame and returns the calculated value\
-`draw()` - Draw visual representation of measurement on video\
+1. `calculate()` - Calculate measurement value from keypoints\
+This function takes the keypoint data for a given frame and returns the calculated value
+2. `draw()` - Draw visual representation of measurement on video\
 This function takes a video frame and draws a visual representation of the measurement onto it\
-`get_info_readable()` - Give a human readable description of the measurement\
-This function uses the values of the measurement to give a human readable description of the measurement\
-`params()` - Return parameters to be written to JSON to allow it to be rebuilt\
-This function returns all the parameters of the measures\
+3. `get_info_readable()` - Give a human readable description of the measurement\
+This function uses the values of the measurement to give a human readable description of the measurement
+4. `params()` - Return parameters to be written to JSON to allow it to be rebuilt\
+This function returns all the parameters of the measurement
 
 For a simple example see DistanceMeasurement.py
 
