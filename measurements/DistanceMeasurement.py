@@ -12,6 +12,7 @@ class DistanceMeasurement(Measurement):
         self.type = "Distance"
         self.point1 = point1
         self.point2 = point2
+        self.convert_pixel_to_cm = True
     
     def calculate(self, points) -> float:
         """Calculates euclidean distance between measurements two points from keypoint data

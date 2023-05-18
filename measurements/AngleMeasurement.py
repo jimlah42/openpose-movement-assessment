@@ -12,6 +12,7 @@ class AngleMeasurement(Measurement):
         self.point1 = point1
         self.point2 = point2
         self.pivot = pivot
+        self.convert_pixel_to_cm = False
     
     def calculate(self, points) -> float:
         """Calculates the angle between two points pivoting around a third points

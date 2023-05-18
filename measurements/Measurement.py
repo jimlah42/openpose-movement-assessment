@@ -4,6 +4,7 @@ class Measurement:
     def __init__(self, name):
         self.name = name
         self.type = "unknown"
+        self.convert_pixel_to_cm = False
 
     def calculate(self, points) -> float:
         """Calculates given measurement value based of keypoint from frame

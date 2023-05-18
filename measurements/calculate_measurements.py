@@ -43,7 +43,7 @@ def calculate(path: str, measurements: List[Measurement]) -> bool:
                 keypoints["measurements"][frame]["time_elapsed (s)"] = frame / keypoints["vid_info"]["fps"]
 
 
-                if (measurement.type != "Distance"):
+                if (not measurement.convert_pixel_to_cm):
                     keypoints["measurements"][frame][measurement.name] = value
                 else:
                     ratio = keypoints["vid_info"]["pixel-cm-ratio"]

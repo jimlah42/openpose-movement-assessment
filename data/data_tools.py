@@ -54,7 +54,7 @@ def generate_csv(json_path: str, measurements: List[str], filename: str) -> bool
     with open(str(json_path + "/keypoints.json")) as json_file:
         jsondata = json.load(json_file)
 
-    csv_file = open(str(json_path + "/" + filename + ".csv"), "w", newline='')
+    csv_file = open(str(json_path + "/" + filename + ".csv"), "w+", newline='')
     csv_writer = csv.writer(csv_file)
     csv_writer.writerow(measurements)
 
