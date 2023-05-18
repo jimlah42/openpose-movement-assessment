@@ -78,13 +78,13 @@ Abstracting the class like this allows the program to simply loop through Measur
 
 Each new measurement class has 4 main functions that it needs to perform:
 
-calculate() - Calculate measurement value from keypoints\
+`calculate()` - Calculate measurement value from keypoints\
 This function takes the keypoint data for a given frame and returns the calculated value\
-draw() - Draw visual representation of measurement on video\
+`draw()` - Draw visual representation of measurement on video\
 This function takes a video frame and draws a visual representation of the measurement onto it\
-get_info_readable() - Give a human readable description of the measurement\
+`get_info_readable()` - Give a human readable description of the measurement\
 This function uses the values of the measurement to give a human readable description of the measurement\
-params() - Return parameters to be written to JSON to allow it to be rebuilt\
+`params()` - Return parameters to be written to JSON to allow it to be rebuilt\
 This function returns all the parameters of the measures\
 
 For a simple example see DistanceMeasurement.py
