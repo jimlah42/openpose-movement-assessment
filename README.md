@@ -20,10 +20,11 @@ https://github.com/CMU-Perceptual-Computing-Lab/openpose/blob/master/doc/03_pyth
 Firstly test that the examples work which means everything is setup properly.
 Then move the required folders into the “openpose” directory of the app (instructions under the “Export OpenPose” heading
 
-Install all required dependencies using
-Pip install requirements.txt
-If you are planning to develop the app it is recommended that you set up a virtual python environment
-To start program use python MainWindow.py
+Install all required dependencies using\
+`pip install requirements.txt`\
+If you are planning to develop the app it is recommended that you set up a virtual python environment\
+To start program use:\
+`python MainWindow.py`
 
 ## Development guide
 This guide is designed to give you a quick overview of how the program is structured and how to go about developing it. For more technical usage all widgets and functions are documented and typed. 
