@@ -65,6 +65,9 @@ The current pages are:
 3. `ViewWindow`
 4. `AnalyseWindow`
 
+
+![Picture1](https://github.com/jimlah42/openpose-movement-assessment/assets/53587801/05a6660f-3c01-4abd-a1c5-37641a7aca4a)
+
 Each custom widget follows the following structure
 
 #Widgets\
